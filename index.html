@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arshan Sheikh | Backend Engineer</title>
+    
+    <!-- ================= SEO & META TAGS ================= -->
+    <title>Arshan Sheikh | Software Engineer</title>
+    <meta name="description" content="Portfolio of Arshan Sheikh, a Software Engineer focusing on scalable Backend architectures, event-driven systems, and FinTech integrations.">
+    <meta name="author" content="Arshan Sheikh">
+    <meta name="keywords" content="Arshan Sheikh, Backend Engineer, Software Engineer, Laravel, Node.js, FinTech, UAE, Dubai, Developer Portfolio">
+
+    <!-- ================= OPEN GRAPH / FACEBOOK / LINKEDIN ================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arshan1019.github.io/">
+    <meta property="og:title" content="Arshan Sheikh | Software Engineer">
+    <meta property="og:description" content="Backend Engineer with 3+ years forging high-performance systems. Specialized in scalable architectures, Laravel, Node.js, and FinTech systems.">
+    <!-- Optional: Replace the content URL below with a real screenshot of your website once it is live for a nice link preview image -->
+    <meta property="og:image" content="https://arshan1019.github.io/og-image.jpg">
+
+    <!-- ================= TWITTER ================= -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arshan1019.github.io/">
+    <meta property="twitter:title" content="Arshan Sheikh | Software Engineer">
+    <meta property="twitter:description" content="Backend Engineer with 3+ years forging high-performance systems. Specialized in scalable architectures, Laravel, Node.js, and FinTech systems.">
+    <!-- Optional: Same image as above -->
+    <meta property="twitter:image" content="https://arshan1019.github.io/og-image.jpg">
+
     <!-- Fonts to capture the RDR2 Vibe -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Rye&display=swap" rel="stylesheet">
     <style>
@@ -16,9 +38,7 @@
             --meta: #555;
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             --scroll-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        [data-theme="dark"] {
+        }[data-theme="dark"] {
             --bg: #110F0E; /* Deep Charcoal/Black */
             --text: #EAE6DF;
             --accent: #D92525; /* Brighter Crimson for dark mode */
@@ -71,9 +91,8 @@
         .contact-telegraph li {
             display: flex;
             align-items: center;
-            margin-bottom: 8px; /* Room for wrapping on mobile */
+            margin-bottom: 8px;
         }
-        /* Automatically adds a diamond separator between items that won't dangle on wrap */
         .contact-telegraph li:not(:last-child)::after {
             content: '♦';
             color: var(--accent);
@@ -102,11 +121,9 @@
             border: none;
             position: relative;
             cursor: pointer;
-            /* Signature Snipped Corners */
             clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
             transition: var(--transition);
         }
-        /* Inner dashed ticket line */
         .btn-rdr2::after {
             content: '';
             position: absolute;
@@ -123,9 +140,7 @@
             transform: translateY(-3px);
             border: none;
         }
-        .btn-rdr2:hover::after { border-color: #fff; }
-
-        [data-theme="dark"] .btn-rdr2 {
+        .btn-rdr2:hover::after { border-color: #fff; }[data-theme="dark"] .btn-rdr2 {
             background-color: var(--accent);
             color: var(--text);
         }
@@ -134,6 +149,34 @@
             background-color: var(--text);
             color: var(--accent);
         }[data-theme="dark"] .btn-rdr2:hover::after { border-color: var(--accent); }
+
+        /* ================= FLOATING CONTROLS (THEME & SHARE) ================= */
+        .top-controls {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+        .control-btn {
+            background: transparent; border: 2px solid var(--accent);
+            color: var(--text); width: 45px; height: 45px;
+            border-radius: 50%; cursor: pointer;
+            font-family: 'Rye', serif; font-size: 1.2rem;
+            transition: var(--transition);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .control-btn:hover { background: var(--accent); color: var(--bg); transform: scale(1.05); }
+        
+        /* Share Notification Toast */
+        #toast {
+            visibility: hidden; min-width: 250px; background-color: var(--text); color: var(--bg);
+            text-align: center; border-radius: 2px; padding: 12px; position: fixed; z-index: 101;
+            left: 50%; transform: translateX(-50%); bottom: 30px; font-family: 'EB Garamond', serif;
+            font-size: 1rem; opacity: 0; transition: opacity 0.5s, bottom 0.5s; border: 1px solid var(--accent);
+        }
+        #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
 
         /* ================= SCROLL ANIMATIONS ================= */
         .reveal-on-scroll {
@@ -204,7 +247,7 @@
         }
         .skill-tags li {
             position: relative;
-            padding: 6px 14px 6px 24px; /* Extra left padding for the punch hole */
+            padding: 6px 14px 6px 24px; 
             font-family: 'EB Garamond', serif;
             font-weight: 600;
             font-size: 0.85rem;
@@ -212,58 +255,32 @@
             text-transform: uppercase;
             border: 1px solid var(--line);
             background: rgba(0, 0, 0, 0.03);
-            /* Signature RDR2 menu cut-corners */
             clip-path: polygon(0 6px, 6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
             transition: var(--transition);
             color: var(--text);
             cursor: default;
         }
         
-        [data-theme="dark"] .skill-tags li {
-            background: rgba(255, 255, 255, 0.03);
-        }
+        [data-theme="dark"] .skill-tags li { background: rgba(255, 255, 255, 0.03); }
 
-        /* The Ledger Binding / Ticket Punch Hole */
         .skill-tags li::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
+            content: ''; position: absolute; left: 8px; top: 50%;
+            transform: translateY(-50%); width: 6px; height: 6px;
+            background: var(--accent); border-radius: 50%;
             transition: var(--transition);
         }
 
-        /* RDR2 Item Selection High-Contrast Hover */
         .skill-tags li:hover {
-            border-color: var(--accent);
-            background: var(--text); /* Solid Ink / Solid Parchment */
-            color: var(--bg);
-            transform: translateY(-3px) scale(1.02);
+            border-color: var(--accent); background: var(--text);
+            color: var(--bg); transform: translateY(-3px) scale(1.02);
         }
-        
-        .skill-tags li:hover::before {
-            background: var(--bg); /* Dot inverses color to stay visible */
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed; top: 30px; right: 30px;
-            background: transparent; border: 2px solid var(--accent);
-            color: var(--text); width: 45px; height: 45px;
-            border-radius: 50%; cursor: pointer;
-            font-family: 'Rye', serif; font-size: 1.2rem;
-            transition: var(--transition); z-index: 100;
-        }
-        .theme-toggle:hover { background: var(--accent); color: var(--bg); }
+        .skill-tags li:hover::before { background: var(--bg); }
 
         /* Mobile Adjustments */
         @media (max-width: 600px) {
             .arsenal-grid { grid-template-columns: 1fr; gap: 30px; }
-            .theme-toggle { top: 15px; right: 15px; width: 35px; height: 35px; font-size: 0.9rem; }
+            .top-controls { top: 15px; right: 15px; gap: 10px; }
+            .control-btn { width: 35px; height: 35px; font-size: 0.9rem; }
             .container { padding: 8vh 6vw; }
             .reveal-on-scroll { transform: translateY(20px); }
             
@@ -281,14 +298,20 @@
 </head>
 <body>
 
-    <button class="theme-toggle" id="toggleBtn" title="Toggle Day/Night">☾</button>
+    <!-- Floating Top Controls -->
+    <div class="top-controls">
+        <button class="control-btn" id="shareBtn" title="Share this page">➦</button>
+        <button class="control-btn" id="toggleBtn" title="Toggle Day/Night">☾</button>
+    </div>
+    
+    <!-- Share Toast Notification -->
+    <div id="toast">Link copied to clipboard!</div>
 
     <div class="container">
         <!-- HEADER -->
         <header class="reveal-on-scroll">
             <div class="title-container">
                 <h1>Arshan Sheikh</h1>
-                <!-- <div class="subtitle brand-font">Backend Engineer & Architect</div> -->
                 <div class="subtitle brand-font">Software Engineer (Backend Focus)</div>
             </div>
             
@@ -300,7 +323,7 @@
                 <li><a href="https://wa.me/971569849035" target="_blank">Chat on WhatsApp</a></li>
             </ul>
 
-            <!-- Download Button (Replace href with your actual CV file path) -->
+            <!-- Download Button -->
             <a href="./Arshan_uae_soft_eng.pdf" download class="btn-rdr2">Download CV</a>
         </header>
 
@@ -430,6 +453,7 @@
     </div>
 
     <script>
+        // Theme Toggle
         const toggleBtn = document.getElementById('toggleBtn');
         const htmlEl = document.documentElement;
 
@@ -445,6 +469,37 @@
             }
         });
 
+        // Share Link Functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const toast = document.getElementById('toast');
+
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'Arshan Sheikh | Software Engineer',
+                text: 'Check out the portfolio of Arshan Sheikh, Software Engineer (Backend Focus).',
+                url: window.location.href
+            };
+
+            try {
+                // If on mobile / supported browser, use native share drawer
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    // Fallback for desktop: Copy to clipboard
+                    await navigator.clipboard.writeText(window.location.href);
+                    showToast();
+                }
+            } catch (err) {
+                console.log('Share canceled or failed', err);
+            }
+        });
+
+        function showToast() {
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // Scroll Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
