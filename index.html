@@ -6,6 +6,7 @@
     
     <!-- ================= SEO & META TAGS ================= -->
     <title>Arshan Sheikh | Software Engineer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
     <meta name="description" content="Portfolio of Arshan Sheikh, a Software Engineer focusing on scalable Backend architectures, event-driven systems, and FinTech integrations.">
     <meta name="author" content="Arshan Sheikh">
     <meta name="keywords" content="Arshan Sheikh, Backend Engineer, Software Engineer, Laravel, Node.js, FinTech, UAE, Dubai, Developer Portfolio">
@@ -15,16 +16,14 @@
     <meta property="og:url" content="https://arshan1019.github.io/">
     <meta property="og:title" content="Arshan Sheikh | Software Engineer">
     <meta property="og:description" content="Backend Engineer with 3+ years forging high-performance systems. Specialized in scalable architectures, Laravel, Node.js, and FinTech systems.">
-    <!-- Optional: Replace the content URL below with a real screenshot of your website once it is live for a nice link preview image -->
-    <meta property="og:image" content="https://arshan1019.github.io/og-image.jpg">
+    <meta property="og:image" content="https://arshan1019.github.io/og-image.png">
 
     <!-- ================= TWITTER ================= -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://arshan1019.github.io/">
     <meta property="twitter:title" content="Arshan Sheikh | Software Engineer">
     <meta property="twitter:description" content="Backend Engineer with 3+ years forging high-performance systems. Specialized in scalable architectures, Laravel, Node.js, and FinTech systems.">
-    <!-- Optional: Same image as above -->
-    <meta property="twitter:image" content="https://arshan1019.github.io/og-image.jpg">
+    <meta property="twitter:image" content="https://arshan1019.github.io/og-image.png">
 
     <!-- Fonts to capture the RDR2 Vibe -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Rye&display=swap" rel="stylesheet">
@@ -71,7 +70,7 @@
         a:hover { color: var(--accent); }
 
         /* ================= LAYOUT & WHITESPACE ================= */
-        .container { max-width: 800px; margin: 0 auto; padding: 10vh 5vw; }
+        .container { max-width: 800px; margin: 0 auto; padding: 10vh 5vw; position: relative; }
         header { text-align: center; margin-bottom: 12vh; position: relative; }
         .title-container { border-bottom: 4px solid var(--accent); padding-bottom: 20px; margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 10px; }
@@ -79,131 +78,93 @@
 
         /* ================= HEADER LINKS & BUTTON ================= */
         .contact-telegraph { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            flex-wrap: wrap; 
-            list-style: none;
-            font-style: italic; 
-            font-size: 1.05rem; 
-            margin-bottom: 40px;
+            display: flex; justify-content: center; align-items: center;
+            flex-wrap: wrap; list-style: none; font-style: italic; 
+            font-size: 1.05rem; margin-bottom: 40px;
         }
-        .contact-telegraph li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
+        .contact-telegraph li { display: flex; align-items: center; margin-bottom: 8px; }
         .contact-telegraph li:not(:last-child)::after {
-            content: '♦';
-            color: var(--accent);
-            font-size: 0.8rem;
-            margin: 0 14px;
-            font-style: normal;
+            content: '♦'; color: var(--accent); font-size: 0.8rem;
+            margin: 0 14px; font-style: normal;
         }
-        .contact-telegraph a {
-            border-bottom: 1px dashed var(--line);
-            padding-bottom: 2px;
-        }
-        .contact-telegraph a:hover {
-            border-bottom-color: var(--accent);
-        }
+        .contact-telegraph a { border-bottom: 1px dashed var(--line); padding-bottom: 2px; }
+        .contact-telegraph a:hover { border-bottom-color: var(--accent); }
 
         /* RDR2 Catalog Button */
         .btn-rdr2 {
-            display: inline-block;
-            padding: 14px 32px;
-            font-family: 'Rye', serif;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--bg);
-            background-color: var(--text);
-            border: none;
-            position: relative;
-            cursor: pointer;
+            display: inline-block; padding: 14px 32px; font-family: 'Rye', serif;
+            font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--bg); background-color: var(--text); border: none;
+            position: relative; cursor: pointer;
             clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
             transition: var(--transition);
         }
         .btn-rdr2::after {
-            content: '';
-            position: absolute;
-            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
             border: 1px dashed var(--bg);
             clip-path: polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-            pointer-events: none;
-            transition: var(--transition);
-            opacity: 0.7;
+            pointer-events: none; transition: var(--transition); opacity: 0.7;
         }
-        .btn-rdr2:hover {
-            background-color: var(--accent);
-            color: #fff;
-            transform: translateY(-3px);
-            border: none;
-        }
-        .btn-rdr2:hover::after { border-color: #fff; }[data-theme="dark"] .btn-rdr2 {
-            background-color: var(--accent);
-            color: var(--text);
-        }
-        [data-theme="dark"] .btn-rdr2::after { border-color: var(--text); }
-        [data-theme="dark"] .btn-rdr2:hover {
-            background-color: var(--text);
-            color: var(--accent);
-        }[data-theme="dark"] .btn-rdr2:hover::after { border-color: var(--accent); }
+        .btn-rdr2:hover { background-color: var(--accent); color: #fff; transform: translateY(-3px); border: none; }
+        .btn-rdr2:hover::after { border-color: #fff; }
+        
+        [data-theme="dark"] .btn-rdr2 { background-color: var(--accent); color: var(--text); }
+        [data-theme="dark"] .btn-rdr2::after { border-color: var(--text); }[data-theme="dark"] .btn-rdr2:hover { background-color: var(--text); color: var(--accent); }
+        [data-theme="dark"] .btn-rdr2:hover::after { border-color: var(--accent); }
 
-        /* ================= FLOATING CONTROLS (THEME & SHARE) ================= */
+        /* ================= DOCUMENT MARGINALIA (CONTROLS) ================= */
         .top-controls {
-            position: fixed;
-            top: 30px;
-            right: 30px;
+            position: absolute;
+            top: 4vh;
+            right: 5vw;
             display: flex;
-            gap: 15px;
-            z-index: 100;
+            gap: 25px;
+            z-index: 10;
         }
         .control-btn {
-            background: transparent; border: 2px solid var(--accent);
-            color: var(--text); width: 45px; height: 45px;
-            border-radius: 50%; cursor: pointer;
-            font-family: 'Rye', serif; font-size: 1.2rem;
+            background: transparent;
+            border: none;
+            color: var(--meta);
+            cursor: pointer;
+            font-family: 'Rye', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             transition: var(--transition);
-            display: flex; justify-content: center; align-items: center;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
         }
-        .control-btn:hover { background: var(--accent); color: var(--bg); transform: scale(1.05); }
+        .control-btn:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
         
-        /* Share Notification Toast */
+        /* Share Notification Toast - Ticket Style */
         #toast {
             visibility: hidden; min-width: 250px; background-color: var(--text); color: var(--bg);
-            text-align: center; border-radius: 2px; padding: 12px; position: fixed; z-index: 101;
-            left: 50%; transform: translateX(-50%); bottom: 30px; font-family: 'EB Garamond', serif;
-            font-size: 1rem; opacity: 0; transition: opacity 0.5s, bottom 0.5s; border: 1px solid var(--accent);
+            text-align: center; padding: 12px 20px; position: fixed; z-index: 101;
+            left: 50%; transform: translateX(-50%); bottom: 30px; font-family: 'Rye', serif;
+            font-size: 0.9rem; opacity: 0; transition: opacity 0.5s, bottom 0.5s; 
+            border: 1px solid var(--accent); text-transform: uppercase; letter-spacing: 1px;
+            clip-path: polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
         }
         #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
 
         /* ================= SCROLL ANIMATIONS ================= */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: var(--scroll-transition);
-        }
-        .reveal-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-on-scroll.visible > * {
-            transition: var(--scroll-transition);
-        }
+        .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: var(--scroll-transition); }
+        .reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
+        .reveal-on-scroll.visible > * { transition: var(--scroll-transition); }
         .reveal-on-scroll.visible .ledger-entry,
-        .reveal-on-scroll.visible .arsenal-category {
-            transition-delay: calc(150ms * var(--stagger-index));
-        }
+        .reveal-on-scroll.visible .arsenal-category { transition-delay: calc(150ms * var(--stagger-index)); }
 
         /* ================= SECTIONS ================= */
         section { margin-bottom: 12vh; position: relative; }
         section::before {
-            content: ''; position: absolute;
-            top: -6vh; left: 50%;
-            transform: translateX(-50%);
-            width: 40px; height: 2px;
-            background: var(--accent);
+            content: ''; position: absolute; top: -6vh; left: 50%;
+            transform: translateX(-50%); width: 40px; height: 2px; background: var(--accent);
         }
         .section-title { font-size: 2rem; text-align: center; margin-bottom: 6vh; color: var(--accent); }
 
@@ -213,10 +174,8 @@
 
         /* The Ledger (Experience) */
         .ledger-entry {
-            margin-bottom: 5vh;
-            border-left: 2px solid var(--line);
-            padding-left: 20px;
-            position: relative;
+            margin-bottom: 5vh; border-left: 2px solid var(--line);
+            padding-left: 20px; position: relative;
         }
         .ledger-entry::before {
             content: ''; position: absolute; left: -6px; top: 10px;
@@ -236,40 +195,19 @@
         .arsenal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .arsenal-category h3 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
         
-        /* RDR2 Catalog / Compendium Styled Tags */
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; padding: 0; margin: 0; }
         .skill-tags li {
-            position: relative;
-            padding: 6px 14px 6px 24px; 
-            font-family: 'EB Garamond', serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border: 1px solid var(--line);
-            background: rgba(0, 0, 0, 0.03);
+            position: relative; padding: 6px 14px 6px 24px; font-family: 'EB Garamond', serif;
+            font-weight: 600; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;
+            border: 1px solid var(--line); background: rgba(0, 0, 0, 0.03);
             clip-path: polygon(0 6px, 6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
-            transition: var(--transition);
-            color: var(--text);
-            cursor: default;
-        }
-        
-        [data-theme="dark"] .skill-tags li { background: rgba(255, 255, 255, 0.03); }
-
+            transition: var(--transition); color: var(--text); cursor: default;
+        }[data-theme="dark"] .skill-tags li { background: rgba(255, 255, 255, 0.03); }
         .skill-tags li::before {
             content: ''; position: absolute; left: 8px; top: 50%;
             transform: translateY(-50%); width: 6px; height: 6px;
-            background: var(--accent); border-radius: 50%;
-            transition: var(--transition);
+            background: var(--accent); border-radius: 50%; transition: var(--transition);
         }
-
         .skill-tags li:hover {
             border-color: var(--accent); background: var(--text);
             color: var(--bg); transform: translateY(-3px) scale(1.02);
@@ -278,19 +216,18 @@
 
         /* Mobile Adjustments */
         @media (max-width: 600px) {
+            .container { padding: 4vh 6vw 8vh 6vw; } /* Adjusted top padding */
+            .top-controls {
+                position: relative; top: 0; right: 0;
+                justify-content: center; margin-bottom: 6vh;
+            }
             .arsenal-grid { grid-template-columns: 1fr; gap: 30px; }
-            .top-controls { top: 15px; right: 15px; gap: 10px; }
-            .control-btn { width: 35px; height: 35px; font-size: 0.9rem; }
-            .container { padding: 8vh 6vw; }
             .reveal-on-scroll { transform: translateY(20px); }
-            
             .contact-telegraph { font-size: 0.95rem; }
             .contact-telegraph li:not(:last-child)::after { margin: 0 10px; }
-            
             .skill-tags { gap: 10px; }
             .skill-tags li { font-size: 0.8rem; padding: 5px 12px 5px 20px; }
             .skill-tags li::before { left: 6px; width: 5px; height: 5px; }
-            
             .entry-header { flex-direction: column; }
             .entry-meta { margin-top: 4px; }
         }
@@ -298,16 +235,17 @@
 </head>
 <body>
 
-    <!-- Floating Top Controls -->
-    <div class="top-controls">
-        <button class="control-btn" id="shareBtn" title="Share this page">➦</button>
-        <button class="control-btn" id="toggleBtn" title="Toggle Day/Night">☾</button>
-    </div>
-    
     <!-- Share Toast Notification -->
     <div id="toast">Link copied to clipboard!</div>
 
     <div class="container">
+        
+        <!-- Document Marginalia Controls -->
+        <div class="top-controls">
+            <button class="control-btn" id="shareBtn" title="Share this page">➦ Share</button>
+            <button class="control-btn" id="toggleBtn" title="Switch to Day">☀ Day</button>
+        </div>
+
         <!-- HEADER -->
         <header class="reveal-on-scroll">
             <div class="title-container">
@@ -393,6 +331,15 @@
                     </ul>
                 </div>
                 <div class="arsenal-category">
+                    <h3>AI & Automation</h3>
+                    <ul class="skill-tags">
+                        <li>Claude Code</li>
+                        <li>pi.dev</li>
+                        <li>MCP Servers</li>
+                        <li>N8N</li>
+                    </ul>
+                </div>
+                <div class="arsenal-category">
                     <h3>Databases & Caching</h3>
                     <ul class="skill-tags">
                         <li>PostgreSQL</li>
@@ -460,11 +407,11 @@
         toggleBtn.addEventListener('click', () => {
             if (htmlEl.getAttribute('data-theme') === 'dark') {
                 htmlEl.setAttribute('data-theme', 'light');
-                toggleBtn.innerHTML = '☀';
+                toggleBtn.innerHTML = '☾ Night';
                 toggleBtn.setAttribute('title', 'Switch to Night');
             } else {
                 htmlEl.setAttribute('data-theme', 'dark');
-                toggleBtn.innerHTML = '☾';
+                toggleBtn.innerHTML = '☀ Day';
                 toggleBtn.setAttribute('title', 'Switch to Day');
             }
         });
@@ -481,11 +428,9 @@
             };
 
             try {
-                // If on mobile / supported browser, use native share drawer
                 if (navigator.share) {
                     await navigator.share(shareData);
                 } else {
-                    // Fallback for desktop: Copy to clipboard
                     await navigator.clipboard.writeText(window.location.href);
                     showToast();
                 }
