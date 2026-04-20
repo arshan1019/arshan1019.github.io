@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arshan Sheikh | Backend Engineer</title>
+    <!-- Fonts to capture the RDR2 Vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Rye&display=swap" rel="stylesheet">
+    <style>
+        /* ================= VARIABLES ================= */
+        :root {
+            --bg: #EAE6DF; /* Parchment */
+            --text: #1A1A1A; /* Ink */
+            --accent: #C3272B; /* RDR2 Crimson */
+            --line: #A69C8E;
+            --meta: #555;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --scroll-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        [data-theme="dark"] {
+            --bg: #110F0E; /* Deep Charcoal/Black */
+            --text: #EAE6DF;
+            --accent: #D92525; /* Brighter Crimson for dark mode */
+            --line: #332D29;
+            --meta: #999;
+        }
+
+        /* ================= RESET & BASE ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'EB Garamond', serif;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            transition: var(--transition);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        
+        ::selection { background: var(--accent); color: #fff; }
+
+        /* ================= TYPOGRAPHY ================= */
+        h1, h2, h3, .brand-font { font-family: 'Rye', serif; font-weight: normal; text-transform: uppercase; letter-spacing: 2px; }
+        a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); transition: var(--transition); }
+        a:hover { color: var(--accent); }
+
+        /* ================= LAYOUT & WHITESPACE ================= */
+        .container { max-width: 800px; margin: 0 auto; padding: 10vh 5vw; }
+        header { text-align: center; margin-bottom: 12vh; position: relative; }
+        .title-container { border-bottom: 4px solid var(--accent); padding-bottom: 20px; margin-bottom: 20px; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; color: var(--meta); letter-spacing: 3px; margin-bottom: 25px;}
+
+        /* ================= HEADER LINKS & BUTTON ================= */
+        .contact-telegraph { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            flex-wrap: wrap; 
+            list-style: none;
+            font-style: italic; 
+            font-size: 1.05rem; 
+            margin-bottom: 40px;
+        }
+        .contact-telegraph li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px; /* Room for wrapping on mobile */
+        }
+        /* Automatically adds a diamond separator between items that won't dangle on wrap */
+        .contact-telegraph li:not(:last-child)::after {
+            content: '♦';
+            color: var(--accent);
+            font-size: 0.8rem;
+            margin: 0 14px;
+            font-style: normal;
+        }
+        .contact-telegraph a {
+            border-bottom: 1px dashed var(--line);
+            padding-bottom: 2px;
+        }
+        .contact-telegraph a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* RDR2 Catalog Button */
+        .btn-rdr2 {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: 'Rye', serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--bg);
+            background-color: var(--text);
+            border: none;
+            position: relative;
+            cursor: pointer;
+            /* Signature Snipped Corners */
+            clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+            transition: var(--transition);
+        }
+        /* Inner dashed ticket line */
+        .btn-rdr2::after {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px dashed var(--bg);
+            clip-path: polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+            pointer-events: none;
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+        .btn-rdr2:hover {
+            background-color: var(--accent);
+            color: #fff;
+            transform: translateY(-3px);
+            border: none;
+        }
+        .btn-rdr2:hover::after { border-color: #fff; }
+
+        [data-theme="dark"] .btn-rdr2 {
+            background-color: var(--accent);
+            color: var(--text);
+        }
+        [data-theme="dark"] .btn-rdr2::after { border-color: var(--text); }
+        [data-theme="dark"] .btn-rdr2:hover {
+            background-color: var(--text);
+            color: var(--accent);
+        }[data-theme="dark"] .btn-rdr2:hover::after { border-color: var(--accent); }
+
+        /* ================= SCROLL ANIMATIONS ================= */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--scroll-transition);
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-on-scroll.visible > * {
+            transition: var(--scroll-transition);
+        }
+        .reveal-on-scroll.visible .ledger-entry,
+        .reveal-on-scroll.visible .arsenal-category {
+            transition-delay: calc(150ms * var(--stagger-index));
+        }
+
+        /* ================= SECTIONS ================= */
+        section { margin-bottom: 12vh; position: relative; }
+        section::before {
+            content: ''; position: absolute;
+            top: -6vh; left: 50%;
+            transform: translateX(-50%);
+            width: 40px; height: 2px;
+            background: var(--accent);
+        }
+        .section-title { font-size: 2rem; text-align: center; margin-bottom: 6vh; color: var(--accent); }
+
+        /* Manifesto (Summary) */
+        .manifesto { font-size: 1.4rem; text-align: justify; text-align-last: center; }
+        .manifesto::first-letter { font-family: 'Rye', serif; font-size: 4rem; color: var(--accent); float: left; line-height: 0.8; padding-right: 10px; }
+
+        /* The Ledger (Experience) */
+        .ledger-entry {
+            margin-bottom: 5vh;
+            border-left: 2px solid var(--line);
+            padding-left: 20px;
+            position: relative;
+        }
+        .ledger-entry::before {
+            content: ''; position: absolute; left: -6px; top: 10px;
+            width: 10px; height: 10px; background: var(--bg);
+            border: 2px solid var(--accent); border-radius: 50%;
+        }
+        .entry-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
+        .entry-title { font-size: 1.4rem; font-weight: bold; }
+        .entry-meta { color: var(--meta); font-style: italic; font-size: 1rem; }
+        .entry-tech { font-family: monospace; color: var(--accent); font-size: 0.9rem; margin-top: 10px; display: block; }
+        
+        ul.ledger-list { list-style: none; margin-top: 15px; }
+        ul.ledger-list li { margin-bottom: 10px; position: relative; padding-left: 15px; }
+        ul.ledger-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+        /* The Arsenal (Skills) */
+        .arsenal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .arsenal-category h3 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+        
+        /* RDR2 Catalog / Compendium Styled Tags */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skill-tags li {
+            position: relative;
+            padding: 6px 14px 6px 24px; /* Extra left padding for the punch hole */
+            font-family: 'EB Garamond', serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, 0.03);
+            /* Signature RDR2 menu cut-corners */
+            clip-path: polygon(0 6px, 6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+            transition: var(--transition);
+            color: var(--text);
+            cursor: default;
+        }
+        
+        [data-theme="dark"] .skill-tags li {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* The Ledger Binding / Ticket Punch Hole */
+        .skill-tags li::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        /* RDR2 Item Selection High-Contrast Hover */
+        .skill-tags li:hover {
+            border-color: var(--accent);
+            background: var(--text); /* Solid Ink / Solid Parchment */
+            color: var(--bg);
+            transform: translateY(-3px) scale(1.02);
+        }
+        
+        .skill-tags li:hover::before {
+            background: var(--bg); /* Dot inverses color to stay visible */
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed; top: 30px; right: 30px;
+            background: transparent; border: 2px solid var(--accent);
+            color: var(--text); width: 45px; height: 45px;
+            border-radius: 50%; cursor: pointer;
+            font-family: 'Rye', serif; font-size: 1.2rem;
+            transition: var(--transition); z-index: 100;
+        }
+        .theme-toggle:hover { background: var(--accent); color: var(--bg); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .arsenal-grid { grid-template-columns: 1fr; gap: 30px; }
+            .theme-toggle { top: 15px; right: 15px; width: 35px; height: 35px; font-size: 0.9rem; }
+            .container { padding: 8vh 6vw; }
+            .reveal-on-scroll { transform: translateY(20px); }
+            
+            .contact-telegraph { font-size: 0.95rem; }
+            .contact-telegraph li:not(:last-child)::after { margin: 0 10px; }
+            
+            .skill-tags { gap: 10px; }
+            .skill-tags li { font-size: 0.8rem; padding: 5px 12px 5px 20px; }
+            .skill-tags li::before { left: 6px; width: 5px; height: 5px; }
+            
+            .entry-header { flex-direction: column; }
+            .entry-meta { margin-top: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" id="toggleBtn" title="Toggle Day/Night">☾</button>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header class="reveal-on-scroll">
+            <div class="title-container">
+                <h1>Arshan Sheikh</h1>
+                <!-- <div class="subtitle brand-font">Backend Engineer & Architect</div> -->
+                <div class="subtitle brand-font">Software Engineer (Backend Focus)</div>
+            </div>
+            
+            <ul class="contact-telegraph">
+                <li><a href="mailto:smarshan10@gmail.com">smarshan10@gmail.com</a></li>
+                <li><a href="https://github.com/arshan1019" target="_blank">GitHub: arshan1019</a></li>
+                <li><a href="https://linkedin.com/in/arshan-sheikh" target="_blank">LinkedIn</a></li>
+                <li><a href="tel:+971569849035">Click to call (+971)</a></li>
+                <li><a href="https://wa.me/971569849035" target="_blank">Chat on WhatsApp</a></li>
+            </ul>
+
+            <!-- Download Button (Replace href with your actual CV file path) -->
+            <a href="./Arshan_uae_soft_eng.pdf" download class="btn-rdr2">Download CV</a>
+        </header>
+
+        <!-- SUMMARY -->
+        <section class="reveal-on-scroll">
+            <p class="manifesto">
+                Backend Engineer with 3+ years forging high-performance systems using Laravel and Node.js. 
+                Specialized in scalable architectures, event-driven systems, and intelligent caching strategies, 
+                delivering 90% load time reductions across 160K+ product datasets. Experienced in FinTech systems, 
+                distributed processing, and designing resilient, production-grade APIs that stand the test of load.
+            </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="reveal-on-scroll">
+            <h2 class="section-title">Trails Ridden</h2>
+            <div id="experience-list">
+                <div class="ledger-entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Kilo Points FZCO <span style="font-weight: normal; font-style: italic;">— Backend Engineer</span></span>
+                        <span class="entry-meta">Dec 2024 – Present | Dubai, UAE</span>
+                    </div>
+                    <ul class="ledger-list">
+                        <li>Engineered a high-throughput system via <strong>FrankenPHP (Docker)</strong> and <strong>Redis</strong>, achieving a 90% load time reduction and sub-0.5ms data retrieval across 160k+ products.</li>
+                        <li>Spearheaded critical migration from Laravel 7 to 10, reverse-engineering schemas to establish a version-controlled source of truth.</li>
+                        <li>Architected a fault-tolerant multi-vendor synchronization engine utilizing Laravel Queues and Jobs to asynchronously aggregate real-time inventory.</li>
+                    </ul>
+                </div>
+
+                <div class="ledger-entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Pratishthan Software Ventures <span style="font-weight: normal; font-style: italic;">— Software Engineer</span></span>
+                        <span class="entry-meta">Sept 2023 – June 2024 | Bangalore, India</span>
+                    </div>
+                    <ul class="ledger-list">
+                        <li>Developed robust FinTech payment systems using Node.js and PostgreSQL, ensuring ACID compliance for high-volume operations.</li>
+                        <li>Implemented event-driven microservice communication via <strong>RabbitMQ</strong> with advanced NACK error-handling for enhanced fault tolerance.</li>
+                        <li>Applied ISO 20022 messaging standards for secure electronic data interchange in financial flows.</li>
+                    </ul>
+                </div>
+
+                <div class="ledger-entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Nicozn Technologies <span style="font-weight: normal; font-style: italic;">— Software Eng. Intern</span></span>
+                        <span class="entry-meta">Dec 2022 – June 2023 | Karkala, India</span>
+                    </div>
+                    <ul class="ledger-list">
+                        <li>Developed and deployed a Laravel-based property platform with Technical SEO and AWS production setup (EC2, S3).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="reveal-on-scroll">
+            <h2 class="section-title">The Arsenal</h2>
+            <div class="arsenal-grid">
+                <div class="arsenal-category">
+                    <h3>Languages & Frameworks</h3>
+                    <ul class="skill-tags">
+                        <li>PHP (Laravel)</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Python (FastAPI)</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="arsenal-category">
+                    <h3>Databases & Caching</h3>
+                    <ul class="skill-tags">
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="arsenal-category">
+                    <h3>Architecture & Messaging</h3>
+                    <ul class="skill-tags">
+                        <li>RESTful APIs</li>
+                        <li>Event-Driven</li>
+                        <li>RabbitMQ</li>
+                        <li>Laravel Queues</li>
+                        <li>Observer Pattern</li>
+                    </ul>
+                </div>
+                <div class="arsenal-category">
+                    <h3>Infrastructure & Domain</h3>
+                    <ul class="skill-tags">
+                        <li>Docker</li>
+                        <li>AWS (EC2, S3)</li>
+                        <li>CI/CD</li>
+                        <li>FinTech (ISO 20022)</li>
+                        <li>Ecommerce Engines</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="reveal-on-scroll">
+            <h2 class="section-title">Bounties & Contributions</h2>
+            <div id="projects-list">
+                 <div class="ledger-entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Open Source Contributor: Bruno</span>
+                    </div>
+                    <span class="entry-tech">Node.js | OpenAPI | Algorithms</span>
+                    <ul class="ledger-list">
+                        <li>Contributed to the core codebase of the popular open-source API client (usebruno/bruno) by resolving a critical parsing bug in the OpenAPI importer.</li>
+                        <li>Fixed a state-sharing bug in recursion logic to accurately generate complex API request bodies.</li>
+                    </ul>
+                </div>
+
+                <div class="ledger-entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Neonatal Data Management</span>
+                    </div>
+                    <span class="entry-tech">Python | FastAPI | PostgreSQL | SQLAlchemy</span>
+                    <ul class="ledger-list">
+                        <li>Engineered a secure clinical data management system implementing strict schema validation to ensure the integrity of sensitive healthcare records.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const htmlEl = document.documentElement;
+
+        toggleBtn.addEventListener('click', () => {
+            if (htmlEl.getAttribute('data-theme') === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                toggleBtn.innerHTML = '☀';
+                toggleBtn.setAttribute('title', 'Switch to Night');
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                toggleBtn.innerHTML = '☾';
+                toggleBtn.setAttribute('title', 'Switch to Day');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+        elementsToReveal.forEach((el) => observer.observe(el));
+        
+        function staggerChildren(containerSelector) {
+            const container = document.querySelector(containerSelector);
+            if(container) {
+                const children = container.children;
+                for (let i = 0; i < children.length; i++) {
+                    children[i].style.setProperty('--stagger-index', i);
+                }
+            }
+        }
+        staggerChildren('#experience-list');
+        staggerChildren('#projects-list');
+        staggerChildren('.arsenal-grid');
+
+    </script>
+</body>
+</html>
