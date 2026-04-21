@@ -4,550 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ================= SEO & META TAGS ================= -->
+    <!-- ================= BASIC SEO ================= -->
     <title>Arshan Sheikh | Software Engineer</title>
-    <link rel="icon" type="image/png" href="/favicon.png" />
+
     <meta
       name="description"
-      content="Portfolio of Arshan Sheikh, a Software Engineer focusing on scalable Backend architectures, event-driven systems, and FinTech integrations."
+      content="Backend Engineer with 3+ years building high-performance, scalable systems using Laravel, Node.js, and event-driven architectures."
     />
     <meta name="author" content="Arshan Sheikh" />
     <meta
       name="keywords"
-      content="Arshan Sheikh, Backend Engineer, Software Engineer, Laravel, Node.js, FinTech, UAE, Dubai, Developer Portfolio"
+      content="Arshan Sheikh, Backend Engineer, Laravel, Node.js, FinTech, UAE, Developer Portfolio"
     />
 
-    <!-- ================= OPEN GRAPH / FACEBOOK / LINKEDIN ================= -->
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- ================= PERFORMANCE (PRECONNECT) ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://arshan1019.github.io" />
+
+    <!-- Optional fallback -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- ================= FONTS ================= -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Rye&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ================= OPEN GRAPH ================= -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arshan1019.github.io/" />
     <meta property="og:title" content="Arshan Sheikh | Software Engineer" />
     <meta
       property="og:description"
-      content="Backend Engineer with 3+ years forging high-performance systems. Specialized in scalable architectures, Laravel, Node.js, and FinTech systems."
+      content="Backend Engineer specializing in scalable systems, Laravel, Node.js, and FinTech architectures."
     />
+
+    <!-- IMPORTANT: cache-busted image -->
     <meta
       property="og:image"
-      content="https://arshan1019.github.io/og-image.png"
+      content="https://arshan1019.github.io/og-image.png?v=2"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <!-- ================= TWITTER ================= -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://arshan1019.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arshan Sheikh | Software Engineer" />
     <meta
-      property="twitter:title"
-      content="Arshan Sheikh | Software Engineer"
+      name="twitter:description"
+      content="Backend Engineer specializing in scalable systems, Laravel, Node.js, and FinTech architectures."
     />
     <meta
-      property="twitter:description"
-      content="Backend Engineer with 3+ years forging high-performance systems. Specialized in scalable architectures, Laravel, Node.js, and FinTech systems."
-    />
-    <meta
-      property="twitter:image"
-      content="https://arshan1019.github.io/og-image.png"
+      name="twitter:image"
+      content="https://arshan1019.github.io/og-image.png?v=2"
     />
 
-    <!-- Google site verification -->
+    <!-- ================= THEME COLOR ================= -->
+    <meta name="theme-color" content="#110f0e" />
+
+    <!-- ================= GOOGLE VERIFY ================= -->
     <meta
       name="google-site-verification"
       content="tI-UHxfZUNn6z_Ql9FhoC699I_70JzYdU_w3frpBruA"
     />
-    <!-- Fonts to capture the RDR2 Vibe -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Rye&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* ================= VARIABLES ================= */
-      :root {
-        --bg: #eae6df; /* Parchment */
-        --text: #1a1a1a; /* Ink */
-        --accent: #c3272b; /* RDR2 Crimson */
-        --line: #a69c8e;
-        --meta: #555;
-        --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        --scroll-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-      }
-      [data-theme="dark"] {
-        --bg: #110f0e; /* Deep Charcoal/Black */
-        --text: #eae6df;
-        --accent: #d92525; /* Brighter Crimson for dark mode */
-        --line: #332d29;
-        --meta: #999;
-      }
-
-      /* ================= RESET & BASE ================= */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--bg);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent);
-      }
-
-      body {
-        background-color: var(--bg);
-        color: var(--text);
-        font-family: "EB Garamond", serif;
-        font-size: 1.15rem;
-        line-height: 1.6;
-        transition: var(--transition);
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-      }
-
-      ::selection {
-        background: var(--accent);
-        color: #fff;
-      }
-
-      /* ================= TYPOGRAPHY ================= */
-      h1,
-      h2,
-      h3,
-      .brand-font {
-        font-family: "Rye", serif;
-        font-weight: normal;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-      a {
-        color: var(--text);
-        text-decoration: none;
-        border-bottom: 1px solid var(--accent);
-        transition: var(--transition);
-      }
-      a:hover {
-        color: var(--accent);
-      }
-
-      /* ================= LAYOUT & WHITESPACE ================= */
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 10vh 5vw;
-        position: relative;
-      }
-      header {
-        text-align: center;
-        margin-bottom: 12vh;
-        position: relative;
-      }
-      .title-container {
-        border-bottom: 4px solid var(--accent);
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-      }
-      h1 {
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        line-height: 1.1;
-        margin-bottom: 10px;
-      }
-      .subtitle {
-        font-size: 1.2rem;
-        color: var(--meta);
-        letter-spacing: 3px;
-        margin-bottom: 25px;
-      }
-
-      /* ================= HEADER LINKS & BUTTON ================= */
-      .contact-telegraph {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        list-style: none;
-        font-style: italic;
-        font-size: 1.05rem;
-        margin-bottom: 40px;
-      }
-      .contact-telegraph li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-      }
-      .contact-telegraph li:not(:last-child)::after {
-        content: "♦";
-        color: var(--accent);
-        font-size: 0.8rem;
-        margin: 0 14px;
-        font-style: normal;
-      }
-      .contact-telegraph a {
-        border-bottom: 1px dashed var(--line);
-        padding-bottom: 2px;
-      }
-      .contact-telegraph a:hover {
-        border-bottom-color: var(--accent);
-      }
-
-      /* RDR2 Catalog Button */
-      .btn-rdr2 {
-        display: inline-block;
-        padding: 14px 32px;
-        font-family: "Rye", serif;
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--bg);
-        background-color: var(--text);
-        border: none;
-        position: relative;
-        cursor: pointer;
-        clip-path: polygon(
-          0 12px,
-          12px 0,
-          100% 0,
-          100% calc(100% - 12px),
-          calc(100% - 12px) 100%,
-          0 100%
-        );
-        transition: var(--transition);
-      }
-      .btn-rdr2::after {
-        content: "";
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        right: 4px;
-        bottom: 4px;
-        border: 1px dashed var(--bg);
-        clip-path: polygon(
-          0 8px,
-          8px 0,
-          100% 0,
-          100% calc(100% - 8px),
-          calc(100% - 8px) 100%,
-          0 100%
-        );
-        pointer-events: none;
-        transition: var(--transition);
-        opacity: 0.7;
-      }
-      .btn-rdr2:hover {
-        background-color: var(--accent);
-        color: #fff;
-        transform: translateY(-3px);
-        border: none;
-      }
-      .btn-rdr2:hover::after {
-        border-color: #fff;
-      }
-
-      [data-theme="dark"] .btn-rdr2 {
-        background-color: var(--accent);
-        color: var(--text);
-      }
-      [data-theme="dark"] .btn-rdr2::after {
-        border-color: var(--text);
-      }
-      [data-theme="dark"] .btn-rdr2:hover {
-        background-color: var(--text);
-        color: var(--accent);
-      }
-      [data-theme="dark"] .btn-rdr2:hover::after {
-        border-color: var(--accent);
-      }
-
-      /* ================= DOCUMENT MARGINALIA (CONTROLS) ================= */
-      .top-controls {
-        position: absolute;
-        top: 4vh;
-        right: 5vw;
-        display: flex;
-        gap: 25px;
-        z-index: 10;
-      }
-      .control-btn {
-        background: transparent;
-        border: none;
-        color: var(--meta);
-        cursor: pointer;
-        font-family: "Rye", serif;
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        border-bottom: 1px solid transparent;
-        padding-bottom: 2px;
-      }
-      .control-btn:hover {
-        color: var(--accent);
-        border-bottom-color: var(--accent);
-      }
-
-      /* Share Notification Toast - Ticket Style */
-      #toast {
-        visibility: hidden;
-        min-width: 250px;
-        background-color: var(--text);
-        color: var(--bg);
-        text-align: center;
-        padding: 12px 20px;
-        position: fixed;
-        z-index: 101;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 30px;
-        font-family: "Rye", serif;
-        font-size: 0.9rem;
-        opacity: 0;
-        transition:
-          opacity 0.5s,
-          bottom 0.5s;
-        border: 1px solid var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        clip-path: polygon(
-          0 8px,
-          8px 0,
-          100% 0,
-          100% calc(100% - 8px),
-          calc(100% - 8px) 100%,
-          0 100%
-        );
-      }
-      #toast.show {
-        visibility: visible;
-        opacity: 1;
-        bottom: 50px;
-      }
-
-      /* ================= SCROLL ANIMATIONS ================= */
-      .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: var(--scroll-transition);
-      }
-      .reveal-on-scroll.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .reveal-on-scroll.visible > * {
-        transition: var(--scroll-transition);
-      }
-      .reveal-on-scroll.visible .ledger-entry,
-      .reveal-on-scroll.visible .arsenal-category {
-        transition-delay: calc(150ms * var(--stagger-index));
-      }
-
-      /* ================= SECTIONS ================= */
-      section {
-        margin-bottom: 12vh;
-        position: relative;
-      }
-      section::before {
-        content: "";
-        position: absolute;
-        top: -6vh;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 2px;
-        background: var(--accent);
-      }
-      .section-title {
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 6vh;
-        color: var(--accent);
-      }
-
-      /* Manifesto (Summary) */
-      .manifesto {
-        font-size: 1.4rem;
-        text-align: justify;
-        text-align-last: center;
-      }
-      .manifesto::first-letter {
-        font-family: "Rye", serif;
-        font-size: 4rem;
-        color: var(--accent);
-        float: left;
-        line-height: 0.8;
-        padding-right: 10px;
-      }
-
-      /* The Ledger (Experience) */
-      .ledger-entry {
-        margin-bottom: 5vh;
-        border-left: 2px solid var(--line);
-        padding-left: 20px;
-        position: relative;
-      }
-      .ledger-entry::before {
-        content: "";
-        position: absolute;
-        left: -6px;
-        top: 10px;
-        width: 10px;
-        height: 10px;
-        background: var(--bg);
-        border: 2px solid var(--accent);
-        border-radius: 50%;
-      }
-      .entry-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-      }
-      .entry-title {
-        font-size: 1.4rem;
-        font-weight: bold;
-      }
-      .entry-meta {
-        color: var(--meta);
-        font-style: italic;
-        font-size: 1rem;
-      }
-      .entry-tech {
-        font-family: monospace;
-        color: var(--accent);
-        font-size: 0.9rem;
-        margin-top: 10px;
-        display: block;
-      }
-
-      ul.ledger-list {
-        list-style: none;
-        margin-top: 15px;
-      }
-      ul.ledger-list li {
-        margin-bottom: 10px;
-        position: relative;
-        padding-left: 15px;
-      }
-      ul.ledger-list li::before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        color: var(--accent);
-      }
-
-      /* The Arsenal (Skills) */
-      .arsenal-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-      .arsenal-category h3 {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 5px;
-      }
-
-      .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .skill-tags li {
-        position: relative;
-        padding: 6px 14px 6px 24px;
-        font-family: "EB Garamond", serif;
-        font-weight: 600;
-        font-size: 0.85rem;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        border: 1px solid var(--line);
-        background: rgba(0, 0, 0, 0.03);
-        clip-path: polygon(
-          0 6px,
-          6px 0,
-          100% 0,
-          100% calc(100% - 6px),
-          calc(100% - 6px) 100%,
-          0 100%
-        );
-        transition: var(--transition);
-        color: var(--text);
-        cursor: default;
-      }
-      [data-theme="dark"] .skill-tags li {
-        background: rgba(255, 255, 255, 0.03);
-      }
-      .skill-tags li::before {
-        content: "";
-        position: absolute;
-        left: 8px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 6px;
-        height: 6px;
-        background: var(--accent);
-        border-radius: 50%;
-        transition: var(--transition);
-      }
-      .skill-tags li:hover {
-        border-color: var(--accent);
-        background: var(--text);
-        color: var(--bg);
-        transform: translateY(-3px) scale(1.02);
-      }
-      .skill-tags li:hover::before {
-        background: var(--bg);
-      }
-
-      /* Mobile Adjustments */
-      @media (max-width: 600px) {
-        .container {
-          padding: 4vh 6vw 8vh 6vw;
-        } /* Adjusted top padding */
-        .top-controls {
-          position: relative;
-          top: 0;
-          right: 0;
-          justify-content: center;
-          margin-bottom: 6vh;
-        }
-        .arsenal-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-        .reveal-on-scroll {
-          transform: translateY(20px);
-        }
-        .contact-telegraph {
-          font-size: 0.95rem;
-        }
-        .contact-telegraph li:not(:last-child)::after {
-          margin: 0 10px;
-        }
-        .skill-tags {
-          gap: 10px;
-        }
-        .skill-tags li {
-          font-size: 0.8rem;
-          padding: 5px 12px 5px 20px;
-        }
-        .skill-tags li::before {
-          left: 6px;
-          width: 5px;
-          height: 5px;
-        }
-        .entry-header {
-          flex-direction: column;
-        }
-        .entry-meta {
-          margin-top: 4px;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- Share Toast Notification -->
