@@ -91,6 +91,13 @@
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Rye&display=swap"
       />
     </noscript>
+    <script>
+      // Apply theme early to prevent flash of unstyled content
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    </script>
     <style>
       /* ================= VARIABLES ================= */
       :root {
@@ -838,15 +845,26 @@
       const toggleBtn = document.getElementById("toggleBtn");
       const htmlEl = document.documentElement;
 
+      // Sync button text with current theme on load
+      if (htmlEl.getAttribute("data-theme") === "light") {
+        toggleBtn.innerHTML = "☾ Night";
+        toggleBtn.setAttribute("title", "Switch to Night");
+        toggleBtn.setAttribute("aria-label", "Switch to Night");
+      }
+
       toggleBtn.addEventListener("click", () => {
         if (htmlEl.getAttribute("data-theme") === "dark") {
           htmlEl.setAttribute("data-theme", "light");
           toggleBtn.innerHTML = "☾ Night";
           toggleBtn.setAttribute("title", "Switch to Night");
+          toggleBtn.setAttribute("aria-label", "Switch to Night");
+          localStorage.setItem("portfolio-theme", "light");
         } else {
           htmlEl.setAttribute("data-theme", "dark");
           toggleBtn.innerHTML = "☀ Day";
           toggleBtn.setAttribute("title", "Switch to Day");
+          toggleBtn.setAttribute("aria-label", "Switch to Day");
+          localStorage.setItem("portfolio-theme", "dark");
         }
       });
 
